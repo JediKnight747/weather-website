@@ -12,8 +12,12 @@ const forecast = (latitude, longitude, callback)=> {
         callback('Error Has Occurred with Query: '+ body.error.info, undefined)
     }
     else{
-        
-        callback(undefined,body.current.weather_descriptions[0] + '. It is currently ' + body.current.temperature + ' degrees out. Feels Like '+ body.current.feelslike+ ' degrees out.')
+        console.log(body.current)
+        callback(undefined,body.current.weather_descriptions[0] 
+            + '. It is currently ' + body.current.temperature 
+            + ' degrees out.  Feels Like '+ body.current.feelslike
+            + ' degrees out with a wind speed of ' + body.current.wind_speed 
+            + ' humidity is '+body.current.humidity + "%")
     
     }
 })
